@@ -41,8 +41,8 @@ public class UI {
 
 	public static ChessPosition readChessPosition(Scanner sc) {
 		try {
-			String s = sc.nextLine();
-			char column = s.charAt(0);
+			String s = sc.nextLine().toLowerCase();
+			char column = s.charAt(0);	
 			int row = Integer.parseInt(s.substring(1));
 			return new ChessPosition(column, row);
 		} catch (RuntimeException e) {
@@ -77,7 +77,7 @@ public class UI {
 			}
 			System.out.println();
 		}
-		System.out.println("  A B C D E F G H ");
+		System.out.println("  a b c d e f g h ");
 	}
 
 	public static void printBoard(ChessPiece[][] pieces, boolean[][] possibleMoves) {
@@ -89,7 +89,7 @@ public class UI {
 			}
 			System.out.println();
 		}
-		System.out.println("  A B C D E F G H ");
+		System.out.println("  a b c d e f g h ");
 	}
 	
 	private static void printPiece(ChessPiece piece, boolean background) {
